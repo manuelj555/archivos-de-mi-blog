@@ -107,7 +107,7 @@ Debemos crear varios ficheros para poder ejecutar la aplicación, la estructura 
 	|-- app
     |    |-- AppKernel.php
     |    |-- config
-    |          |--- config.yml
+    |    |     |--- config.yml
     |    |-- Resources
     |          |--- views
     |                |--- home
@@ -144,7 +144,7 @@ class AppKernel extends Kernel
 
     public function registerBundles()
     {
-    	/* Inicialmente vamos a trabajar con 3 bundles:
+        /* Inicialmente vamos a trabajar con 3 bundles:
          * El Propio Framework, Twig
          * y Mejoras para controladores y dem�s.
          */
