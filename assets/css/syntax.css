@@ -95,6 +95,7 @@
 .highlight > pre > code {
     display: block;
     padding: 10px;
+    font-size: 1.1em;
 }
 
 .highlight > pre { white-space: pre; overflow: auto; }
