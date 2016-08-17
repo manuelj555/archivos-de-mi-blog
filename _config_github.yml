@@ -1,0 +1,23 @@
+name: PHP + Symfony Tips
+description: 
+meta_description: ""
+
+markdown: redcarpet
+highlighter: pygments
+
+kramdown:
+  input:          GFM
+  syntax_highlighter: pygments
+  linenos: true 
+
+logo: false
+paginate: 15
+
+gems: [jekyll-paginate]
+
+# Details for the RSS feed generator
+baseurl:  http://manuelj555.github.io/
+#url: 
+    
+author:         'Manuel Aguirre <programador.manuel@gmail.com>'
+encoding: utf-8
