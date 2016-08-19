@@ -223,8 +223,8 @@ class HomeController extends Controller
 
 __app/Resources/views/base.html.twig__
 
+{% highlight twig linenos %}
 {% raw %}
-```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -252,20 +252,20 @@ __app/Resources/views/base.html.twig__
 </article>
 </body>
 </html>
-```
 {% endraw %}
+{% endhighlight %}
 
 __app/Resources/views/home/index.html.twig__
 
+{% highlight twig linenos %}
 {% raw %}
-```html
 {% extends 'base.html.twig' %}
 
 {% block content %}
 Hola Mundo!
 {% endblock %}
-```
 {% endraw %}
+{% endhighlight %}
 
 __web/css/foro.css__
 
