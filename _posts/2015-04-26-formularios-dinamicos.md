@@ -160,7 +160,7 @@ class RegisterController extends Controller
 
 Ahora en la vista twig, mostraremos el formulario y añadiremos el javascript necesario para que el campo `state` se actualize cuando el usuario seleccione o cambie de pais:
 
-{% highlight javascript linenos %}
+{% highlight js linenos %}
 {% raw %}
 {# app/Resources/views/user/new.html.twig #}
 

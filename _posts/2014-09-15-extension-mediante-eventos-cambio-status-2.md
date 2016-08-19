@@ -19,12 +19,12 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 
 class VerifyStatusListener
 {
-	protected $logger;
+    protected $logger;
 
-	public function __construct($logger = null)
-	{
-		$this->logger = $logger;
-	}
+    public function __construct($logger = null)
+    {
+        $this->logger = $logger;
+    }
 
     /**
      * Este método será el encargado de verificar el status del usuario para ver
@@ -38,10 +38,10 @@ class VerifyStatusListener
         $user = $event->getSubject(); //nos devuelve el objeto User
 
         if($user->getStatus() == User::STATUS_APPROVED){
-        	$event->stopPropagation(); //detenemos la ejecucion del evento, y evitamos la aprobacion del usuario
-        	if($this->logger){
-        		$this->logger->debug("Se detuvo la aprobación del usuario, ya que este se encuentra aprobado");
-        	}
+            $event->stopPropagation(); //detenemos la ejecucion del evento, y evitamos la aprobacion del usuario
+            if($this->logger){
+              $this->logger->debug("Se detuvo la aprobación del usuario, ya que este se encuentra aprobado");
+            }
         }
     }
 }
@@ -78,21 +78,21 @@ Para lograr esto debemos recordar que en la clase UserManagar, en su evento appr
 {% highlight php linenos %}
 <?php
 
-	...
+  ...
 
- 	public function approve(User $user)
-    {
-        $event = new GenericEvent($user);
-        $this->dispatcher->dispatch(UserEvents::PRE_APPROVE, $event);
+  public function approve(User $user)
+  {
+      $event = new GenericEvent($user);
+      $this->dispatcher->dispatch(UserEvents::PRE_APPROVE, $event);
 
-		// esta condición verifica si algún listener ha detenido la ejecución de la
-		// aprobación llamando a $event->stopPropagation()
-        if ($event->isPropagationStopped()) {
-            return false; //cancelamos la aprobación
-        }
+      // esta condición verifica si algún listener ha detenido la ejecución de la
+      // aprobación llamando a $event->stopPropagation()
+      if ($event->isPropagationStopped()) {
+          return false; //cancelamos la aprobación
+      }
 
-		...
-    }
+      ...
+  }
 {% endhighlight %}
 
 Bueno, así podemos crear otros listener para verificaciónes y ejecuciones adicionales de procesos.

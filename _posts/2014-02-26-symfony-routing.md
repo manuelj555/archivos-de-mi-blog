@@ -28,7 +28,7 @@ Acá hay un ejemplo de como debemos tener el composer.json:
 
 Ahora solo hace falta ejecutar el comando:
 
-    php composer install
+    php composer install 
 
 #### Organizando el código
 
@@ -257,7 +257,7 @@ Ahora vemos lo sencillo que se ha hecho crear rutas gracias al uso de Yml.
 
 Como vimos con enterioridad, el componente hace uso de unas cuantas clases para el manejo de rutas, pero además ofrece una clase que nos permite manejar de una forma más sencilla todo esto, ya que ofrece métodos para encontrar rutas y crear urls a partir de esas rutas, tambien se encarga cachear las mismas para mejorar el rendimiento de la aplicación:
 
-{% highlight php linenos %}
+```php
 <?php
 
 use Symfony\Component\Routing\Router;
@@ -298,7 +298,7 @@ $url = $router->generate('paises_listado');
 
 $url = $router->generate('paises_editar', array('id' => 3));
 //              /paises/editar/3
-{% endhighlight %}
+```
 
 Con eso ya hemos visto como funciona el componente.
 

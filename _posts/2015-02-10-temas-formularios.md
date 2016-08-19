@@ -11,7 +11,7 @@ Muchas veces por desconocimiento optamos por renderizar cada elemento de los for
 
 Un ejemplo muy común de lo expuesto es un formulario como el siguiente:
 
-{% highlight jinja linenos %}
+{% highlight twig linenos %}
 {% raw %}
 {{ form_start(form) }}
     <div class="form_errors">
@@ -74,7 +74,7 @@ Veamos los pasos a seguir para lograr que el código anterior implemente los tem
 
 Este archivo contiene una serie de bloques twig, donde el interior de cada uno es código html que será renderizado para cada elementos de formulario, inputs, labels, textareas, selects, checboxes, errores, entre otros.
 
-{% highlight jinja linenos %}
+{% highlight twig linenos %}
 {% raw %}
 {# app/Resources/views/Form/fields.html.twig #}
 {# Extendemos del layout por defecto para reutilizar widgets usando parent() #}
@@ -169,7 +169,7 @@ Haciendo esto, todos los formularios de la aplicación ahora serán renderizados
 
 Cuando solo queremos aplicar cierto tema a un formulario especifico, lo hacemos de la siguiente manera:
 
-{% highlight jinja linenos %}
+{% highlight twig linenos %}
 {% raw %}
 {# app/Resources/views/my_form.html.twig #}
 
@@ -186,7 +186,7 @@ Existe una prioridad a la hora de determinar cual tema utilizar para el renderiz
 
 Ahora que hemos establecido los temas para los formularios, podemos simplificar el código de las vistas que imprimen los forms:
 
-{% highlight jinja linenos %}
+{% highlight twig linenos %}
 {% raw %}
 
 {# {% form_theme form 'Form/fields.html.twig' %} descomentar si el tema no es usado de forma global #}

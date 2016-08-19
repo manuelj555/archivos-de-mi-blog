@@ -2,13 +2,19 @@ name: PHP + Symfony Tips
 description: 
 meta_description: ""
 
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 
 kramdown:
-  input:          GFM
-  syntax_highlighter: pygments
-  linenos: true 
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+      wrap: false
 
 logo: false
 paginate: 15

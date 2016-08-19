@@ -22,7 +22,7 @@ Como nos podemos dar cuenta, el componente de validación no tiene una Constrain
 
 La entidad usuario tendrá tres atributos, **name**, **email** y **code**, ninguno puede ser nulo, el email debe ser un correo válido y el código debe ser uno existente en la base de datos.
 
-{% highlight php linenos %}
+```php
 <?php
 
 namespace MyBundle\Entity;
@@ -31,32 +31,31 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class User
 {
-	/**
-	 * @Assert\NotBlank(message="el campo no puede estar vacío")
-	 */
+    /**
+     * @Assert\NotBlank(message="el campo no puede estar vacío")
+     */
     protected $name;
 
     /**
-	 * @Assert\NotBlank(message="el campo no puede estar vacío")
-	 * @Assert\Email(message="el campo debe ser un correo válido")
-	 */
+     * @Assert\NotBlank(message="el campo no puede estar vacío")
+     * @Assert\Email(message="el campo debe ser un correo válido")
+     */
     protected $email;
 
     /**
-	 * @Assert\NotBlank(message="el campo no puede estar vacío")
-	 */
+     * @Assert\NotBlank(message="el campo no puede estar vacío")
+     */
     protected $code;
 
     // ...getters y setters
 }
-
-{% endhighlight %}
+```
 
 ### Entidad Code
 
 La entidad Code será la que nos permita obtener y buscar los códigos en la Base de Datos.
 
-{% highlight php linenos %}
+```php
 <?php
 
 namespace MyBundle\Entity;
@@ -65,7 +64,7 @@ class Code
 {
     protected $code;
 }
-{% endhighlight %}
+```
 
 ### Creando el Constraint
 
@@ -73,7 +72,7 @@ Leyendo la documentación sobre la creación de [constraints propios](http://sym
 
 Nuestro constraint se llamará **ValidCode**, y el validador que devolverá será un string (**valid_code**) que representa al validador definido como servicio en la aplicación:
 
-{% highlight php linenos %}
+```php
 <?php
 
 namespace MyBundle\Validator\Constraint;
@@ -95,7 +94,7 @@ class ValidCode extends Constraint
     }
 
 }
-{% endhighlight %}
+```
 
 Ahora debemos crear la clase que realizará el proceso de validación:
 
@@ -103,7 +102,7 @@ Ahora debemos crear la clase que realizará el proceso de validación:
 
 La clase **ValidCodeValidator** será la encargada de hacer el proceso de validación, y si al validar no se encuentra el códigó en la base de datos, se añadirá una violación al modelo:
 
-{% highlight php linenos %}
+```php
 <?php
 
 namespace MyBundle\Validator;
@@ -129,7 +128,7 @@ class ValidCodeValidator extends ConstraintValidator
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Registrando el Validador
 
@@ -153,7 +152,7 @@ Definimos el servicio **my\_bundle.validator.valid\_code** y le creamos el [tag]
 
 ### Usando la Constraint
 
-{% highlight php linenos %}
+```php
 <?php
 
 namespace MyBundle\Entity;
@@ -166,15 +165,15 @@ class User
 	//......
 
     /**
-	 * @Assert\NotBlank(message="el campo no puede estar vacío")
-	 *
-	 * @ValidCode()
-	 */
+     * @Assert\NotBlank(message="el campo no puede estar vacío")
+     *
+     * @ValidCode()
+     */
     protected $code;
 
     // ...getters y setters
 }
-{% endhighlight %}
+```
 
 Añadiendo la anotación **@ValidCode()** (y el use correspondiente) al validar la entidad, el validador verificará que el valor del atributo $code sea un código existente en la base de datos, en el caso en donde el código no exista, el validador nos devolverá un error para ese atributo.
 
