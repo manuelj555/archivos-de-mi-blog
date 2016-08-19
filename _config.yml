@@ -2,10 +2,6 @@ name: PHP + Symfony Tips
 description: 
 meta_description: ""
 
-#kramdown:
-#  input:          GFM
-#  syntax_highlighter: pygments
-
 markdown: kramdown
 highlighter: rouge
 
