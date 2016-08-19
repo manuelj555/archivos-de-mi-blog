@@ -546,6 +546,7 @@ margin on the iframe, cause it breaks stuff. */
     max-width: 100%;
     margin: 0 auto;
     height: auto;
+    border: 2px solid #303538;
 }
 
 /* The author credit area after the post */

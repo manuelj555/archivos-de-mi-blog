@@ -281,9 +281,9 @@ Para ejecutar el proyecto vamos hacer uso del servidor interno de php. Para lo c
 
 	php -S localhost:8000 -t web
 
-Si ahora vamos desde un navegador a `http://localhost:8000/home` deberíamos tener como resultado el mensaje
+Si ahora vamos desde un navegador a `http://localhost:8000/home` deberíamos tener como resultado:
 
-	Hola Mundo!
+![Hola Mundo]({{ site.url }}/assets/images/micro-foro/1-hola-mundo.png)
 
 Por ahora es todo! ya tenemos el proyecto configurado y funcionando con una página muy simple.
 
