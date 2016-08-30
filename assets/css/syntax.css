@@ -136,8 +136,18 @@ pre.highlight, figure.highlight > pre { padding: 10px }
 .highlighter-rouge .gutter.gl .lineno, .highlight .gutter.gl .lineno{width: 30px;}
 
 .highlight > pre { white-space: pre; overflow: auto; }
+.highlighter-rouge { overflow: auto; }
 
 /* ocultando errores de twig */
 .language-twig .err{background-color: transparent; color: inherit;}
 /* comentarios php */
 .language-php .sd { color: #94BF8F }
+
+code.highlighter-rouge {
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0 1px #eee;
+    padding: 0 2px;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+}

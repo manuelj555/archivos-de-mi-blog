@@ -47,7 +47,7 @@ github_url: http://manuelj555.github.io
         <footer class="post-footer">
             {% if site.author %}
             <section class="author">
-                <header> <a href="{{ site.baseurl }}"> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header>
+                <!-- <header> <a href="{{ site.baseurl }}"> <img class="profile" src="/assets/images/profile.png" alt="Author's profile picture"></a></header> -->
                 <article>
                     <h4> {{ site.author }} </h4>
                     <p> 
@@ -61,17 +61,17 @@ github_url: http://manuelj555.github.io
 
             <section class="share">
                 <h4>Comparte</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text={{page.title}}&amp;url={{ page.github_url }}{{ page.url }}"
+                <a class="icon-twitter" href="http://twitter.com/share?text={{page.title}}&amp;url={{ layout.github_url }}{{ page.url }}"
                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');
                            return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ page.github_url }}{{page.url}}"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ layout.github_url }}{{page.url}}"
                    onclick="window.open(this.href, 'facebook-share', 'width=580,height=296');
                            return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{ page.github_url }}{{page.url}}"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url={{ layout.github_url }}{{page.url}}"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');
                            return false;">
                     <span class="hidden">Google+</span>

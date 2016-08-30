@@ -287,4 +287,6 @@ Si ahora vamos desde un navegador a `http://localhost:8000/home` deberíamos ten
 
 Por ahora es todo! ya tenemos el proyecto configurado y funcionando con una página muy simple.
 
-Para la segunda parte vamos a comenzar a crear la base de datos, los modelos y configurar algunos controladores
+[Descargar o visualizar el Proyecto](https://github.com/manuelj555/foro-microkerneltrait/releases/tag/foro-parte-1)
+
+Para la [segunda parte](/2016/08/21/foro-micro-kernel-trait-symfony-parte-2.html) vamos a comenzar a crear la base de datos, los modelos y configurar algunos controladores
